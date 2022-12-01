@@ -11,7 +11,7 @@ const totalCalories: int[] = [];
 let currentCalorieTotal: int = 0;
 
 // Iterate over each calorie string.
-calorieStrings.forEach(calorieString => parseCurrentLine(calorieString))
+calorieStrings.forEach(calorieString => parseCurrentLine(calorieString));
 
 // Parse a calorie string, ensuring it is accounted for properly.
 function parseCurrentLine(calorieString: string) {
