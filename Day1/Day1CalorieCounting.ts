@@ -5,10 +5,10 @@ const text = await Deno.readTextFile("./input.txt");
 const calorieStrings: string[] = text.split('\n');
 
 // Create an array of integers to hold the total calorie count produced by each elf.
-const totalCalories: int[] = [];
+const totalCalories: number[] = [];
 
 // Build a running total for each sublist of calories.
-let currentCalorieTotal: int = 0;
+let currentCalorieTotal: number = 0;
 
 // Iterate over each calorie string.
 calorieStrings.forEach(calorieString => parseCurrentLine(calorieString));
@@ -16,7 +16,7 @@ calorieStrings.forEach(calorieString => parseCurrentLine(calorieString));
 // Parse a calorie string, ensuring it is accounted for properly.
 function parseCurrentLine(calorieString: string) {
     // Convert the string into a number.
-    const calorieNumber: int = Number(calorieString);
+    const calorieNumber: number = Number(calorieString);
 
     // Number("") converts to 0. A 0 then indicates that a sublist is complete.
     // (This logic assumes all packed items have some calories.)
@@ -42,7 +42,7 @@ totalCalories.push(currentCalorieTotal);
 // (Part 1 Answer)
 
 // Calculate the max of the array of total calories.
-const maxTotalCalories: int = Math.max(...totalCalories);
+const maxTotalCalories: number = Math.max(...totalCalories);
 
 // Print the largest integer from the array of totalCalories (the largest amount of calories collected by a single elf).
 console.log(`The elf carrying the most calories is carrying a total of ${maxTotalCalories} calories.`);
@@ -50,7 +50,7 @@ console.log(`The elf carrying the most calories is carrying a total of ${maxTota
 // (Part 2 Answer)
 
 // Sort the array of total calories in descending order.
-const sortedArray: int[] = totalCalories.sort((calTotal1: int, calTotal2: int) => calTotal2 - calTotal1);
+const sortedArray: number[] = totalCalories.sort((calTotal1: number, calTotal2: number) => calTotal2 - calTotal1);
 
 // Add up the first (largest) three total calories.
 const sumOfTopThreeTotalCalories = sortedArray[0] + sortedArray[1] + sortedArray[2];
