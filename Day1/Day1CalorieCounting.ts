@@ -8,7 +8,7 @@ const calorieStrings: string[] = text.split('\n');
 const totalCalories: number[] = [];
 
 // Build a running total for each sublist of calories.
-let currentCalorieTotal: number = 0;
+let currentCalorieTotal = 0;
 
 // Iterate over each calorie string.
 calorieStrings.forEach(calorieString => parseCurrentLine(calorieString));
@@ -16,7 +16,7 @@ calorieStrings.forEach(calorieString => parseCurrentLine(calorieString));
 // Parse a calorie string, ensuring it is accounted for properly.
 function parseCurrentLine(calorieString: string) {
     // Convert the string into a number.
-    const calorieNumber: number = Number(calorieString);
+    const calorieNumber = Number(calorieString);
 
     // Number("") converts to 0. A 0 then indicates that a sublist is complete.
     // (This logic assumes all packed items have some calories.)
